@@ -1,6 +1,5 @@
 import { getRandomNumber } from './util.js';
 
-// Функция для генерации случайного комментария
 export function generateRandomComment() {
   const avatars = [
     'img/avatar-1.svg',
@@ -50,7 +49,6 @@ export function generateRandomComment() {
   };
 }
 
-// Функция для генерации массива комментариев
 export function generateCommentsArray() {
   const commentsArray = [];
   const usedIds = new Set();
