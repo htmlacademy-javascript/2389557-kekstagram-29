@@ -1,51 +1,49 @@
 import { getRandomNumber } from './util.js';
 
-export function generateRandomComment() {
-  const avatars = [
-    'img/avatar-1.svg',
-    'img/avatar-2.svg',
-    'img/avatar-3.svg',
-    'img/avatar-4.svg',
-    'img/avatar-5.svg',
-    'img/avatar-6.svg',
-  ];
+const AVATAR = 6;
 
-  const names = [
-    'Иван',
-    'Александра',
-    'Михаил',
-    'Екатерина',
-    'Алексей',
-    'Анна',
-    'Сергей',
-    'Дарья',
-    'Павел',
-    'Наталья',
-  ];
+function avatarURL(number) {
+  return `img/avatar-${number}.svg`;
+}
 
-  const sentences = [
-    'Очень красивая фотография!',
-    'Отличный кадр!',
-    'Супер!',
-    'Мне нравится!',
-    'Прекрасное место!',
-    'Очаровательно!',
-    'Интересный ракурс!',
-    'Сказочно!',
-    'Отличная работа!',
-    'Красивые цвета!',
-    'Замечательно!',
-  ];
+const NAMES = [
+  'Иван',
+  'Александр',
+  'Михаил',
+  'Екатерина',
+  'Алексей',
+  'Анна',
+  'Сергей',
+  'Дарья',
+  'Павел',
+  'Наталья',
+];
 
-  const randomAvatarIndex = getRandomNumber(0, avatars.length - 1);
-  const randomNameIndex = getRandomNumber(0, names.length - 1);
-  const randomSentenceIndex = getRandomNumber(0, sentences.length - 1);
+const SENTENCES = [
+  'Очень красивая фотография!',
+  'Отличный кадр!',
+  'Супер!',
+  'Мне нравится!',
+  'Прекрасное место!',
+  'Очаровательно!',
+  'Интересный ракурс!',
+  'Сказочно!',
+  'Отличная работа!',
+  'Красивые цвета!',
+  'Замечательно!',
+];
+
+// Функция для генерации случайного комментария
+function generateRandomComment() {
+  const randomAvatarIndex = getRandomNumber(1, AVATAR);
+  const randomNameIndex = getRandomNumber(0, NAMES.length - 1);
+  const randomSentenceIndex = getRandomNumber(0, SENTENCES.length - 1);
 
   return {
     id: getRandomNumber(1, 1000),
-    avatar: avatars[randomAvatarIndex],
-    message: sentences[randomSentenceIndex],
-    name: names[randomNameIndex],
+    avatar: avatarURL(randomAvatarIndex),
+    message: SENTENCES[randomSentenceIndex],
+    name: NAMES[randomNameIndex],
   };
 }
 
