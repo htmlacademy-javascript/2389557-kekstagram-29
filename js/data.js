@@ -2,9 +2,7 @@ import { getRandomNumber } from './util.js';
 
 const AVATAR = 6;
 
-function avatarURL(number) {
-  return `img/avatar-${number}.svg`;
-}
+const avatarURL = (number) => `img/avatar-${number}.svg`;
 
 const NAMES = [
   'Иван',
