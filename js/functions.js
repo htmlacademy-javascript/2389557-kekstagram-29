@@ -1,17 +1,11 @@
 
-function StringLength(string, maxLength) {
-  if (string.length <= maxLength) {
-    return true;
-  }
-  return false;
-}
+let StringLength = (string, maxLength) => string.length <= maxLength;
+
 console.log(StringLength('Пример строки Пример строки', 50));
 
 
 
-function validateStringLength (string, maxLength) {
-  return string.length <= maxLength;
-}
+let validateStringLength = (string, maxLength) => string.length <= maxLength;
 
 let inputString = "Пример строки";
 let maxAllowedLength = 10;
